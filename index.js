@@ -1,27 +1,27 @@
-import {initialize} from "./src/initialize.js";
-import {addCube} from "./src/shapes.js";
+import {createCircle} from "./src/shape.js";
 
-const cameraLocation = {z: 5}
-const rendererParameters = {antialias: true} // see WebGLRendererParameters
-const lightProperties = {
-    x: 5,
-    y: 5,
-    z: 7.5,
-    color: 0xffffff,
-    integrity: 1.0
+class Application {
+    constructor() {
+        this.pixieApp = new PIXI.Application(
+            {
+                backgroundColor: 0x1099bb,
+                width: innerWidth,
+                height: innerHeight,
+                resolution: devicePixelRatio,
+                autoDensity: true,
+                antialias: true
+            });
+
+        document.body.appendChild(this.pixieApp.view);
+
+        this._addShape();
+    }
+
+    _addShape() {
+        const x = this.pixieApp.screen.width / 2;
+        const y = this.pixieApp.screen.height / 2;
+        this.pixieApp.stage.addChild(createCircle(x, y));
+    }
 }
 
-const sceneObj = initialize(cameraLocation, rendererParameters, lightProperties);
-const cube = addCube(sceneObj, 0xff0080);
-
-sceneObj.light.target = cube;
-
-const animate = () => {
-    requestAnimationFrame(animate);
-
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    sceneObj.renderer.render(sceneObj.scene, sceneObj.camera);
-}
-
-animate();
+globalThis.application = new Application();
