@@ -1,21 +1,16 @@
-# CRS ThreeJS Starter
+# CRS PixieJS Starter
 
 ## Introduction
 
 This is a starter kit with all the based on [crs-starter](https://github.com/caperaven/crs-starter)  
-The aim of this starter is to privde a quick start on working with WebGL and [threejs](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene).
-
-This project uses the ES6 modules so take note of the fact that we are not importing everything, just what we need.
+The aim of this starter is to privde a quick start on working with WebGL and [pixiejs](https://www.pixijs.com/).
 
 ## Getting Started
 
 Create a clone of this project by using the template.  
-Once you have it pulled to your hard drive, you will need to run `npm install` so that the dependencies are installed.
+PixieJS comes already installed in this starter.  
 
-## Resources
+If you want to update you pixiejs or use a different version you can download it at:  
+https://github.com/pixijs/pixi.js/releases
 
-1. [threejs editor](https://threejs.org/editor/)
-1. [threejs fundimentals](https://threejsfundamentals.org/)
-1. [threejs chrome debug extension](https://chrome.google.com/webstore/detail/threejs-developer-tools/ebpnegggocnnhleeicgljbedjkganaek?hl=en)
-
-
+The version we are using here is v5.3.3
